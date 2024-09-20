@@ -1,6 +1,49 @@
-/* Vi ser till så att body och html inte "syns" */
+/* I den här filen finns ett antal bortkommenterade
+   stilar som påverkar och låter en experimentera med
+   marginaler och bilder. Kommentera bort och ändra
+   värden för att se hur sidan påverkas.
+
+   Kom också ihåg att Utvecklarverktyget i Chrome funkar
+   utmärkt för att se boxen, färger osv för enskilda
+   element
+*/
+
+/* Power trick:
+
+   ⌘ (Cmd) + ⇧ (Shift) + 7
+   Växlar mella bortkommenterat eller inte för raden
+   man står på alternativt all markerad text
+*/
+
+/* Selektorn * gäller för ALLA element om inget annat specificeras */
+* {
+    /* Genom att sätta en stor margin och padding så är
+       det enklare att se effekterna på vår sida */
+    /*
+    margin: 5px;
+    padding: 10px;
+    */
+
+    /* Och med bakgrundsfärg och en tydlig border blir
+       det ännu lättare */
+    /* 
+    border: 2px green solid;
+    background-color: lightgreen;
+    */
+
+    /* Om vi aktiverar border-box så kommer alla storlekar
+       vi ange att vara för innehållet inklusive padding
+       och border (men inte margin). Det känns oftast mest
+       naturligt så. */
+    /* box-sizing: border-box; */
+
+}
+
+/* Eftersom body och html normalt inte har några boxar
+   så tar vi bort dem */
 body,
 html {
+    /* 0 behöver ingen enhet */
     /*
     border: 0;
     margin: 0;
@@ -8,16 +51,10 @@ html {
     */
 }
 
-/* Detta gäller för alla element om inget annat specificeras */
-* {
-    /*
-    margin: 5px;
-    padding: 10px;
-    */
-    /* box-sizing: border-box; */
-}
 
 .container {
+    /* Med olika bakgrundsfärg och border för olika 
+       element blir det ännu enklare att se vad som händer */   
     /*
     background-color: lightblue;
     border: 2px solid blue;
@@ -29,6 +66,25 @@ img {
     background-color: greenyellow;
     border: 2px solid green;
     */
-    /* max-width: 100%; */
-    /* height: auto; */
+    
+    /* En bra grund för alla bilder är att begränsa
+       bredden till bildskärmen och höjden att
+       behålla rätt proportioner */
+    /* 
+    max-width: 100%; 
+    height: auto; 
+    */
+
+    /* Ofta är det lättare att hantera en bild som
+       ett block eller inline-block */
+    /*
+    display: inline-block;
+    */
+
+    /* Och att åtminstone för bilder använda border-box
+       och 0 i marginal för bästa förutsägbarhet */
+    /*
+    box-sizing: border-box;
+    margin: 0;
+    */
 }
