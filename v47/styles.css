@@ -1,0 +1,80 @@
+div {
+    overflow: hidden;  
+    font-size: 2rem;
+    color: #555555;
+}
+  
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+  
+.container {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 40px auto 40px;
+    grid-template-areas:
+        "header header header"
+        "menu content content"
+        "footer footer footer";
+}
+
+@media screen and (max-width:400px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px 100px auto 40px;
+        grid-template-areas:
+            "header"
+            "menu"
+            "content"
+            "footer";
+    }
+
+    /*
+    .menu {
+        display: none;
+    }
+    */
+}
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+/*  */
+
+.content > div {
+    flex: 1 1 200px;
+    border: 1px solid blue;
+}
+
+/* Ange namn och färg för de olika sektionerna i layouten */
+
+.header {
+    grid-area: header;
+    background-color: #96cef4;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #ff6f69;
+}
+
+.content {
+    grid-area: content;
+    background-color: #88d8b0;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #ffcc5c;
+}
+
+
